@@ -1,6 +1,7 @@
 allow mpdecision self:capability sys_nice;
 allow mpdecision socket_device:dir add_name;
-allow mpdecision socket_device:sock_file { write create setattr unlink };
+allow mpdecision socket_device:sock_file create_file_perms;
+allow mpdecision socket_device:sock_file unlink;
 
 type_transition mpdecision system_data_file:file mpctl_data_file;
 allow mpdecision system_data_file:dir { search add_name write };
